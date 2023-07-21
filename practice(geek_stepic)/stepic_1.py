@@ -197,8 +197,51 @@
 
 
 #Выпрямить списочек
-my_list = [[1, 9, 8, 7, 4], [7, 3, 4], [2, 1]]
-sum(my_list, [])
->>>[1, 9, 8, 7, 4, 7, 3, 4, 2, 1]
-sum(sum(my_list, []))
->>>46
+# my_list = [[1, 9, 8, 7, 4], [7, 3, 4], [2, 1]]
+# sum(my_list, [])
+# >>>[1, 9, 8, 7, 4, 7, 3, 4, 2, 1]
+# sum(sum(my_list, []))
+# >>>46
+
+# n = int(input())
+#
+# my_list = [[i for i in range(1,n+1)] for i in range(n)]
+#
+# print(sum(my_list,[]))
+# for el in my_list:
+#     print(el)
+#
+# n = int(input())
+# i = 1
+# my_list = []
+# for _ in range(n):
+#     my_list.append([i for i in range(1,i+1)])
+#     i+=1
+#
+# for el in my_list:
+#     print(el)
+n = 10
+lit = []
+for i in range(n):
+    lit.append([i for i in range(1, i + 1)])
+print(lit)
+
+
+def next_row(row):
+    row = [1] + row
+    for i in range(1, len(row)-1):
+        row[i] += row[i+1]
+    return row
+
+row = []
+res = []
+
+n = int(input())
+for i in range(n+1):
+    row = next_row(row)
+    res.append(row)
+
+
+print(res[-1]) if n!=0 else print([1])
+
+
