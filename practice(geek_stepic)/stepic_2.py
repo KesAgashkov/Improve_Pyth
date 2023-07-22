@@ -101,7 +101,8 @@
 
 
 # n = int(input())
-# matrix = [list(map(int,input().split())) for i in range(n)]
+#m = int(input())
+# matrix = [[m]*0] for i in range(n)]
 # res = []
 # for i in range(len(matrix)):
 #     for j in range(len(matrix)):
@@ -140,18 +141,45 @@
 # print(f"Левая четверть: {left}")
 
 
-data = {"Вася": ("Палатка", "Котелок", "Спички", "Шашлык", "Топор", "Мазик"),
-        "Петя": ("Палатка", "Котелок", "Топор"),
-        "Костя": ("Веревка", "Мыло", ),
-        "Саша": ("Палатка", "Котелок", "Топор", "Спирт", "Масло"),
-        }
-lst = []
-for k, v in data.items():
-    lst.append(set(v))
+# data = {"Вася": ("Палатка", "Котелок", "Спички", "Шашлык", "Топор", "Мазик"),
+#         "Петя": ("Палатка", "Котелок", "Топор"),
+#         "Костя": ("Веревка", "Мыло", ),
+#         "Саша": ("Палатка", "Котелок", "Топор", "Спирт", "Масло"),
+#         }
+# lst = []
+# for k, v in data.items():
+#     lst.append(set(v))
+#
+# temp_1 = lst[0]
+# res_all = set()
+# for i in range(1, len(lst)):
+#     temp_1 = temp_1.intersection(lst[i])
+#
+# print(temp_1)
 
-temp_1 = lst[0]
-res_all = set()
-for i in range(1, len(lst)):
-    temp_1 = temp_1.intersection(lst[i])
 
-print(temp_1)
+# n = int(input())
+# m = int(input())
+# matrix = [[str((i * j)).ljust(3) for i in range (m)] for j in range (n)]
+# for el in matrix:
+#     print(*el)
+
+# n = int(input())
+# m = int(input())
+# matrix = [[input().split()] for j in range (n)]
+# for el in matrix:
+#     print(*el)
+
+
+n = int(input())
+m = int(input())
+coor = []
+matrix = [[list(map(int,input().split()))] for j in range (n)]
+maxx = -1
+for i in range(len(matrix)):
+    for j in range(m):
+        if int(matrix[i][j]) > maxx:
+            maxx = matrix[i][j]
+            coor.append(i)
+            coor.append(j)
+print(*coor)
