@@ -38,7 +38,7 @@ def get_common_and_unic_items():
     print(res_unic)
 
 
-get_common_and_unic_items()
+# get_common_and_unic_items()
 
 
 # Задание 1
@@ -105,6 +105,7 @@ def get_ten_most_frequent_words():
     print(f"Вариант посложнее: {res[:10]}")
 
 
+
 # get_ten_most_frequent_words()
 
 # Задание 3
@@ -151,5 +152,6 @@ def get_camp_set_all_var():
         print(f"Общий вес = {weight}. В рюкзаке следующие вещи: {res}")
         weight = 0
         res = []
+
 
 # get_camp_set_all_var()
