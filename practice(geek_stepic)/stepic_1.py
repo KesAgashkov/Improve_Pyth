@@ -227,6 +227,7 @@ for i in range(n):
 print(lit)
 
 
+
 def next_row(row):
     row = [1] + row
     for i in range(1, len(row)-1):
