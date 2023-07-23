@@ -12,6 +12,7 @@ def new(*args):
     return sum(args)+z
 
 
+
 print(new(10,15,100))
 help(new)
 
