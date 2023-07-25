@@ -220,29 +220,145 @@
 #
 # for el in my_list:
 #     print(el)
-n = 10
-lit = []
-for i in range(n):
-    lit.append([i for i in range(1, i + 1)])
-print(lit)
+# n = 10
+# lit = []
+# for i in range(n):
+#     lit.append([i for i in range(1, i + 1)])
+# print(lit)
+#
+#
+#
+# def next_row(row):
+#     row = [1] + row
+#     for i in range(1, len(row)-1):
+#         row[i] += row[i+1]
+#     return row
+#
+# row = []
+# res = []
+#
+# n = int(input())
+# for i in range(n+1):
+#     row = next_row(row)
+#     res.append(row)
+#
+#
+# print(res[-1]) if n!=0 else print([1])
+
+# n = int(input())
+# m = int(input())
+# matrix = [list(map(int, input().split())) for j in range (n-1)]
+# maximum = -1000
+# fir, sec = 0,0
+# for i in range(n-1):
+#     for j in range(m-1):
+#         if matrix[i][j]>maximum:
+#             maximum = matrix[i][j]
+#             fir = i
+#             sec = j
+# print(i,j)
+
+
+# n = int(input())
+# m = int(input())
+# matrix = [[int(i) for i in input().split()] for j in range (n)]
+# fir, sec = map(int,input().split())
+# for i in range(n):
+#     for j in range(m):
+#         if j == fir:
+#             matrix[i][sec] = matrix[i][j]
+#         if j == sec:
+#             matrix[i][fir] = matrix[i][j]
+#
+# for el in matrix():
+#     print(*el)
+
+
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for j in range (n)]
+# transp = [[matrix[j][i] for j in range(n)] for i in range (n)]
+#
+# print("YES" if matrix == transp else "NO")
 
 
 
-def next_row(row):
-    row = [1] + row
-    for i in range(1, len(row)-1):
-        row[i] += row[i+1]
-    return row
-
-row = []
-res = []
-
-n = int(input())
-for i in range(n+1):
-    row = next_row(row)
-    res.append(row)
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for j in range (n)]
+# for i in range(len(matrix)):
+#     matrix[i][i], matrix[len(matrix)-i-1][i] = matrix[len(matrix)-i-1][i],matrix[i][i]
+# for el in matrix:
+#     print(*el)
 
 
-print(res[-1]) if n!=0 else print([1])
+# n = int(input())
+# matrix = [[int(i) for i in input().split()] for j in range (n)]
+# mirror = [[matrix[j][i] for j in range(n)] for i in range (n)]
+#
+# for i in range(n):
+#     mirror[i].reverse()
+#     print(*mirror[i])
 
+
+
+# coor = list(input())
+# spis = ["a", "b", "c", "d", "e", "f", "g", "h"]
+# y = spis.index(coor[0]) + 2
+# x = int(coor[1]) + 2
+# board = [["." for i in range(12)] for j in range(12)]
+# for i in range(10, 2, -1):
+#     for j in range(2, 10):
+#         if x == i and y == j:
+#             board[i][j] = "N"
+#         elif ((x - i) ** 2 + (y - j) ** 2) == 5:
+#             board[i][j] = "*"
+# for i in range(10,2,-1):
+#     for j in range(2,10):
+#         print(board[i][j],end=" ")
+#     print()
+#
+#
+#
+# n = int(input())
+# matr = [list(map(int, input().split())) for i in range(n)]
+# flag_similar = False
+# flag_z = False
+# sub = []
+#
+# p = matr[0][0]
+# for i in range(n):
+#     if not flag_similar:
+#         for j in range(n):
+#             x = matr[i][j]
+#             if x != p:
+#                 flag_similar = True
+#                 break
+#     else:
+#         break
+# for el in matr:
+#     if el.count(0) != 0:
+#         flag_z = True
+#         break
+#
+# if not flag_similar:
+#     print("NO")
+# elif flag_z:
+#     print("NO")
+# else:
+#     res = []
+#     s = 0
+#     for i in range(n):
+#         s += matr[i][i]
+#     res.append(s)
+#     s = 0
+#     for i in range(n):
+#         sub.append(matr[i][n - i - 1])
+#         s += matr[i][n - i - 1]
+#     res.append(s)
+#     s = 0
+#     for el in matr:
+#         res.append(sum(el))
+#     matr1 = [[matr[j][i] for j in range(n)] for i in range(n)]
+#     for el in matr1:
+#         res.append(sum(el))
+#     print("YES" if len(set(res)) == 1 and len(set(sub)) != 1 else "NO")
 
