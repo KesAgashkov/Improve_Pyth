@@ -64,6 +64,7 @@ for el in s:
         temp.add(el)
 
 
+<<<<<<< HEAD
 s = set()
 for item in input().split():
   print(["NO", "YES"][item in s])
@@ -72,3 +73,5 @@ for item in input().split():
 
 
 
+=======
+>>>>>>> origin/main
