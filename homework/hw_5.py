@@ -54,3 +54,4 @@ def get_fibon_n(n: int):
     yield f'{k} = {f_2}'
 
 # print(f'Число Фибоначчи от' , *get_fibon_n(45))
+
