@@ -152,3 +152,61 @@ files = ['python.png', 'qwerty.py', 'stepik.png', 'beegeek.org', 'windows.pnp', 
 
 myset = {el.lower() for el in files if el.lower().endswith(".png")}
 print(*sorted(myset))
+
+
+n = int(input())
+test = []
+for _ in range(n+1):
+    town = input()
+    if town not in test:
+        test.append(town)
+    else:
+        print("REPEAT")
+        break
+else:
+    print("OK")
+
+
+n =  int(input())
+m = int(input())
+book_rus = {input() for _ in range(n)}
+for _ in range(m):
+    if input() in book_rus:
+        print("YES")
+    else:
+        print("NO")
+
+
+s_1 = set(map(int, input().split()))
+s_2 = set(map(int, input().split()))
+res = s_1 & s_2
+print(*sorted(res,reverse=True) if res else ("BAD DAY",))
+
+
+s_1 = set(map(int, input().split()))
+s_ans = set(map(int, input().split()))
+print("YES"if s_1 == s_ans else "NO")
+
+
+
+m =  int(input())
+n =  int(input())
+mathematics_pupil = {input() for _ in range(m)}
+informatics_pupil = {input() for _ in range(n)}
+res = mathematics_pupil ^ informatics_pupil
+print(len(res) if res else "NO")
+
+
+s_1 = set(input().split())
+s_2 = set(input().split())
+res = s_1 | s_2
+print(*sorted(res) )
+
+
+m =  int(input())
+res = {input() for _ in range(int(input()))}
+for i in range(m-1):
+    s = {input() for _ in range(int(input()))}
+    res = res.intersection(s)
+
+print(*sorted(res),sep="\n")
