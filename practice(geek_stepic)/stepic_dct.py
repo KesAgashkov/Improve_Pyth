@@ -145,42 +145,132 @@
 # for letter in set(text):
 #     result[letter] = text.count(letter)
 
-s = 'orange strawberry barley gooseberry apple apricot barley currant orange melon pomegranate banana banana orange barley apricot plum grapefruit banana quince strawberry barley grapefruit banana grapes melon strawberry apricot currant currant gooseberry raspberry apricot currant orange lime quince grapefruit barley banana melon pomegranate barley banana orange barley apricot plum banana quince lime grapefruit strawberry gooseberry apple barley apricot currant orange melon pomegranate banana banana orange apricot barley plum banana grapefruit banana quince currant orange melon pomegranate barley plum banana quince barley lime grapefruit pomegranate barley'.split()
-result = {}
-for word in set(s):
-    result[word] = s.count(word)
+# s = 'orange strawberry barley gooseberry apple apricot barley currant orange melon pomegranate banana banana orange barley apricot plum grapefruit banana quince strawberry barley grapefruit banana grapes melon strawberry apricot currant currant gooseberry raspberry apricot currant orange lime quince grapefruit barley banana melon pomegranate barley banana orange barley apricot plum banana quince lime grapefruit strawberry gooseberry apple barley apricot currant orange melon pomegranate banana banana orange apricot barley plum banana grapefruit banana quince currant orange melon pomegranate barley plum banana quince barley lime grapefruit pomegranate barley'.split()
+# result = {}
+# for word in set(s):
+#     result[word] = s.count(word)
+#
+# result =[k for k, v in result.items() if v==max(result.values())]
+# print(sorted(result)[0])
+#
+#
+# result = {l: s.split().count(l) for l in set(s.split())}
+#
+# print(min(l for l in result if result[l]==max(result.values())))
+#
+#
+# pets = [('Hatiko', 'Parker', 'Wilson', 50),
+#         ('Rusty', 'Josh', 'King', 25),
+#         ('Fido', 'John', 'Smith', 28),
+#         ('Butch', 'Jake', 'Smirnoff', 18),
+#         ('Odi', 'Emma', 'Wright', 18),
+#         ('Balto', 'Josh', 'King', 25),
+#         ('Barry', 'Josh', 'King', 25),
+#         ('Snape', 'Hannah', 'Taylor', 40),
+#         ('Horry', 'Martha', 'Robinson', 73),
+#         ('Giro', 'Alex', 'Martinez', 65),
+#         ('Zooma', 'Simon', 'Nevel', 32),
+#         ('Lassie', 'Josh', 'King', 25),
+#         ('Chase', 'Martha', 'Robinson', 73),
+#         ('Ace', 'Martha', 'Williams', 38),
+#         ('Rocky', 'Simon', 'Nevel', 32)]
+# result ={}
+# for el in pets:
+#     result.setdefault(el[1:], []).append(el[0])
+#
+#
+# lst = [word.strip('.,!?:;-') for word in input().lower().split()]
+# res = {}
+# for word in lst:
+#     res[word]=(lst.count(word))
+# print(min(res.items(), key=lambda x: (x[1],x[0]))[0])
 
-result =[k for k, v in result.items() if v==max(result.values())]
-print(sorted(result)[0])
 
 
-result = {l: s.split().count(l) for l in set(s.split())}
+# lst = input().split()
+# d = {}
+# for el in lst:
+#     d[el] = d.get(el, 0) + 1
+#     if d[el]==1:
+#         print(el, end=" ")
+#     elif d[el] > 1:
+#         print(el +"_"+str(d[el]-1))
 
-print(min(l for l in result if result[l]==max(result.values())))
+# dct = {}
+# for _ in range(int(input())):
+#     k, v = input().split(": ")
+#     k = k.lower()
+#     dct[k] = v
+#
+# for _ in range(int(input())):
+#     word = input().lower()
+#     if word in dct:
+#         print(dct[word])
+#     else:
+#         print("Не найдено")
+#
+#
+# print("YES" if sorted(input())==sorted(input()) else "NO")
+#
+#
+#
+# dct = {}
+# for _ in range(int(input())):
+#     k, v = input().split()
+#     dct[v] = k
+# word = input()
+# for k,v in dct.items():
+#     if word in dct:
+#          print(dct[word])
+#          break
+#     elif v == word:
+#          print(k)
+#
+#
+# dct = {}
+# for _ in range(int(input())):
+#     k, *v = input().split()
+#     dct[k] = v
+# for _ in range(int(input())):
+#     word = input()
+#     for k, v in dct.items():
+#         if word in v:
+#             print(k)
 
 
-pets = [('Hatiko', 'Parker', 'Wilson', 50),
-        ('Rusty', 'Josh', 'King', 25),
-        ('Fido', 'John', 'Smith', 28),
-        ('Butch', 'Jake', 'Smirnoff', 18),
-        ('Odi', 'Emma', 'Wright', 18),
-        ('Balto', 'Josh', 'King', 25),
-        ('Barry', 'Josh', 'King', 25),
-        ('Snape', 'Hannah', 'Taylor', 40),
-        ('Horry', 'Martha', 'Robinson', 73),
-        ('Giro', 'Alex', 'Martinez', 65),
-        ('Zooma', 'Simon', 'Nevel', 32),
-        ('Lassie', 'Josh', 'King', 25),
-        ('Chase', 'Martha', 'Robinson', 73),
-        ('Ace', 'Martha', 'Williams', 38),
-        ('Rocky', 'Simon', 'Nevel', 32)]
-result ={}
-for el in pets:
-    result.setdefault(el[1:], []).append(el[0])
+# dct = {}
+# for _ in range(int(input())):
+#     ph, name = input().split()
+#     name = name.lower()
+#     dct[name] = dct.get(name, []) + [ph]
+#
+# for i in range(int(input())):
+#     sear = input().lower()
+#     if sear in dct:
+#         print(*dct[sear])
+#     else:
+#         print("абонент не найден")
 
 
-lst = [word.strip('.,!?:;-') for word in input().lower().split()]
-res = {}
-for word in lst:
-    res[word]=(lst.count(word))
-print(min(res.items(), key=lambda x: (x[1],x[0]))[0])
+# dct1 = {}
+# dct2 = {}
+# inp = input()
+# res = ""
+# for el in inp:
+#     dct1[el] = dct1.get(el, 0) + 1
+#
+# for el in inp:
+#     res += str(dct1[el])
+#
+# for i in range(int(input())):
+#     k, v = input().split(": ")
+#     dct2[v] = k
+#
+# for k in res:
+#     print(dct2[k], end="")
+
+
+# squares = {i: {j: j**2 for j in range(i + 1)} for i in range(5)}
+#
+# for value in squares.values():
+#     print(value)
