@@ -274,3 +274,120 @@
 #
 # for value in squares.values():
 #     print(value)
+
+
+# s = '1:men 2:kind 90:number 0:sun 34:book 56:mountain 87:wood 54:car 3:island 88:power 7:box 17:star 101:ice'.split()
+#
+# result = {int(el.split(":")[0]): el.split(":")[1] for el in s}
+
+
+# numbers = [34, 10, 4, 6, 10, 23, 90, 100, 21, 35, 95, 1, 36, 38, 19, 1, 6, 87, 1000, 13456, 360]
+#
+# result = {i: [j for j in range(1, i+1) if i%j ==0] for i in numbers}
+
+
+# words = ['hello', 'bye', 'yes', 'no', 'python', 'apple', 'maybe', 'stepik', 'beegeek']
+#
+# result = {w: [ord(j) for j in w] for w in words}
+# print(result)
+#
+#
+# letters = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 26: 'Z'}
+#
+# remove_keys = [1, 5, 7, 12, 17, 19, 21, 24]
+#
+# result = {k: v for k,v in letters.items() if k not in remove_keys}
+#
+#
+# students = {'Timur': (170, 75), 'Ruslan': (180, 105), 'Soltan': (192, 68), 'Roman': (175, 70), 'Madlen': (160, 50), 'Stefani': (165, 70), 'Tom': (190, 90), 'Jerry': (180, 87), 'Anna': (172, 67), 'Scott': (168, 78), 'John': (186, 79), 'Alex': (195, 120), 'Max': (200, 110), 'Barak': (180, 89), 'Donald': (170, 80), 'Rustam': (186, 100), 'Alice': (159, 59), 'Rita': (170, 80), 'Mary': (175, 69), 'Jane': (190, 80)}
+#
+# result = {k: v for k,v in students.items() if v[0]>167 and v[1]<75}
+#
+#
+# tuples = [(1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12), (13, 14, 15), (16, 17, 18), (19, 20, 21), (22, 23, 24), (25, 26, 27), (28, 29, 30), (31, 32, 33), (34, 35, 36)]
+#
+#
+# result = {el[0]:(el[1],el[2]) for el in tuples}
+#
+#
+#
+# student_ids = ['S001', 'S002', 'S003', 'S004', 'S005', 'S006', 'S007', 'S008', 'S009', 'S010', 'S011', 'S012', 'S013']
+# student_names = ['Camila Rodriguez', 'Juan Cruz', 'Dan Richards', 'Sam Boyle', 'Batista Cesare', 'Francesco Totti', 'Khalid Hussain', 'Ethan Hawke', 'David Bowman', 'James Milner', 'Michael Owen', 'Gary Oldman', 'Tom Hardy']
+# student_grades = [86, 98, 89, 92, 45, 67, 89, 90, 100, 98, 10, 96, 93]
+#
+# result = [{k: {n: g}} for k,n,g in zip(student_ids, student_names, student_grades)]
+#
+#
+# my_dict = {'C1': [10, 20, 30, 7, 6, 23, 90], 'C2': [20, 30, 40, 1, 2, 3, 90, 12], 'C3': [12, 34, 20, 21], 'C4': [22, 54, 209, 21, 7], 'C5': [2, 4, 29, 21, 19], 'C6': [4, 6, 7, 10, 55], 'C7': [4, 8, 12, 23, 42], 'C8': [3, 14, 15, 26, 48], 'C9': [2, 7, 18, 28, 18, 28]}
+# my_dict = {k: [el for el in v if el<=20] for k,v in my_dict.items()}
+#
+#
+# dct = {'A': 'U', 'C': 'G', 'G': 'C', 'T': 'A'}
+# print(*[dct[el] for el in input()], sep="")
+#
+#
+# d = str.maketrans({'A': 'U', 'C': 'G', 'G': 'C', 'T': 'A'})
+# s = input()
+# print(s.translate(d))
+#
+#
+# d = {'A': 1, 'E': 1, 'I': 1, 'L': 1, 'N': 1, 'O': 1, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'D': 2, 'G': 2, 'B': 3, 'C': 3,
+#      'M': 3, 'P': 3, 'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4, 'K': 5, 'J': 8, 'X': 8, 'Q': 10, 'Z': 10}
+# res = 0
+# for l in input():
+#     res += d[l]
+# print(res)
+#
+# d = {
+#     1: "AEILNORSTU",
+#     2: "DG",
+#     3: "BCMP",
+#     4: "FHVWY",
+#     5: "K",
+#     8: "JX",
+#     10: "QZ"
+# }
+# sum = 0
+# for el in input():
+#     for k in d:
+#         if el in d[k]:
+#             sum += k
+#             break
+# print(sum)
+#
+#
+# def build_query_string(params):
+#     sp = []
+#     for k, v in params.items():
+#         sp.append(k + "=" + str(v))
+#
+#     return "&".join(sorted(sp))
+
+
+
+# n = int(input())
+# dct1={}
+# check =  {'write' : 'W', 'read': 'R', 'execute': 'X'}
+# for i in range(n):
+#     fir,*sec = input().split()
+#     dct1[fir] = sec
+# m = int(input())
+# for i in range(m):
+#     oper, filename = input().split()
+#     if filename in dct1 and check[oper] in dct1[filename]:
+#         print("OK")
+#     else:
+#         print("Access denied")
+
+
+
+data = {}
+for i in range(int(input())):
+    name, product, count = input().split()
+    data.setdefault(name, {})
+    data[name][product] = data[name].setdefault(product, 0) + int(count)
+
+for name in sorted(data):
+    print(name + ":", sep="\n")
+    for pos in sorted(data[name]):
+        print(pos, data[name][pos])
