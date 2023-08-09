@@ -16,5 +16,5 @@ with open('new_json.pickle', 'rb') as f:
 with open("new_c.csv", "w", encoding="utf-8") as c:
     writer = csv.writer(c)
     for row in data:
-        writer.writerow(row)
+        writer.writerow(str(row))
 
