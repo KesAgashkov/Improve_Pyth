@@ -163,3 +163,5 @@ class FunctionMatrix:
 # print(*new_matr.transp_matrix(), sep="\n")
 # print()
 # print(*new_matr.mirror_matrix(),sep="\n")
+
+
