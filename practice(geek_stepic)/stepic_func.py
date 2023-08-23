@@ -456,3 +456,147 @@
 #
 # print(evaluate())
 
+
+# def ignore_command(command):
+#     ignore = ['alias', 'configuration', 'ip', 'sql', 'select', 'update', 'exec', 'del', 'truncate']
+#     res = any(map(lambda x: x in command, ignore))
+#     return res
+#
+#
+# countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
+# capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
+# population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
+#
+# for coun, cap, pop in zip(countries,capitals,population):
+#     print(f'{cap} is the capital of {coun}, population equal {pop} people.')
+#
+#
+#
+# abscissas = map(float, input().split())
+# ordinates = map(float, input().split())
+# applicates = map(float, input().split())
+# res = all(map(lambda x: x[0]**2+x[1]**2+x[2]**2<=4, zip(abscissas,ordinates,applicates)))
+# print(res)
+
+#
+# inp = list(map(lambda x: int(x) if x.isdigit() else None, input().split(".")))
+# if None not in inp:
+#     res = all(map(lambda x: 0<=x<=255, inp))
+# else:
+#     res = False
+# print(res)
+
+
+# temp = [x for x in range(int(input()), int(input())+1) if "0" not in str(x)]
+# for el in temp:
+#     if all(el%int(x)==0 for x in str(el)):
+#         print(el, end=" ")
+#
+#
+# inp = input()
+# res = all([any(el.isupper() for el in inp),any(el.islower() for el in inp),any(el.isdigit() for el in inp),len(inp)>=7])
+# print("YES" if res else "NO")
+#
+#
+# password = input()
+# s = password.isalpha(), password.isdigit(), password.islower(), password.isupper(), len(password) < 7
+# print('NO' if any(s) else 'YES')
+#
+#
+#
+# clas = int(input())
+# res = []
+# temp = []
+# for _ in range(clas):
+#     for _ in range(int(input())):
+#         temp.append(input())
+#     if any(map(lambda x: "5" in x, temp)):
+#         res.append(True)
+#     else:
+#         res.append(False)
+#     temp = []
+#
+# print("YES" if all(res) else "NO")
+
+
+# def generate_letter(mail, name, date, time, place, teacher="Тимур Гуев", number=17):
+#     return f"""To: {mail}
+# Приветствую, {name}!
+# Вам назначен экзамен, который пройдет <date>, в {time}.
+# По адресу: {place}.
+# Экзамен будет проводить {teacher} в кабинете {number}.
+# Желаем удачи на экзамене!
+# """
+#
+# print(generate_letter('lara@yandex.ru', 'Лариса', '10 декабря', '12:00', 'Часова 23, корпус 2'))
+# print()
+#
+#
+# def generate_letter(mail, name, date, time, place, teacher="Тимур Гуев", number=17):
+#     return f"To: {mail}\nПриветствую, {name}!\nВам назначен экзамен, который пройдет {date}, в {time}.\nПо адресу: {place}.\nЭкзамен будет проводить {teacher} в кабинете {number}.\nЖелаем удачи на экзамене!"
+#
+# def pretty_print(data, side="-", delimiter="|"):
+#     sum(list(map(len,data)))
+#
+#
+# def pretty_print(data, side="-", delimiter="|"):
+#     data =  map(str,data)
+#     st = delimiter
+#     for el in data:
+#         st+= " "+el + " " + delimiter
+#     print(" "+side*(len(st)-2))
+#     print(st)
+#     print(" "+side*(len(st)-2))
+#
+# pretty_print([1, 2, 10, 23, 123, 3000])
+#
+# from functools import reduce
+# def concat(*args, sep=" "):
+#     return sep.join(map(str,args))
+#
+#
+# from functools import reduce
+# from operator import mul
+#
+#
+# def product_of_odds(data):
+#     result = reduce(lambda x, y: x * y, filter(lambda x: x % 2 == 1, data), 1)
+#     return result
+#
+#
+#
+# words = 'the world is mine take a look what you have started'.split()
+#
+# print(*list(map(lambda x:'"'+x+'"',words)))
+#
+#
+# numbers = [18, 191, 9009, 5665, 78, 77, 45, 23, 19991, 908, 8976, 6565, 5665, 10, 1000, 908, 909, 232, 45654, 786]
+# print(*list(filter(lambda x: str(x) != str(x)[::-1],numbers)))
+#
+#
+# numbers = [(10, -2, 3, 4), (-13, 56), (1, 9, 2), (-1, -9, -45, 32), (-1, 5, 1), (17, 0, 1), (0, 1), (3,), (39, 12), (11, -23), (10, -100, 21, 32), (3, -8), (1, 1)]
+#
+# sorted_numbers = sorted(numbers, key=lambda x: sum(x)/len(x), reverse=True)
+#
+# print(sorted_numbers)
+#
+#
+# def call(func, *args):
+#     return func(*args)
+#
+#
+# inp = list(input().split())
+# print(*sorted(inp, key=lambda x: x.lower()))
+
+
+#
+# sp = [input() for _ in range(int(input()))]
+# sp = sorted(sp)
+# print(*sorted(sp, key=lambda x: sum([ord(el)-65 for el in x.upper()])),sep="\n")
+
+
+sp = [input() for _ in range(int(input()))]
+sp = sorted(sp)
+print(*sorted(sp, key=lambda x: sum([int(el)*256**gr for el,gr in zip(x.split("."), range(3, -1, -1))])), sep="\n")
+
+
