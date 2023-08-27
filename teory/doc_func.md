@@ -1,0 +1,16 @@
+Документация к модулю работы с простыми числами
+===
+Описание функции is_prime()
+---
+Для проверки числа на простоту используйте функцию is_prime
+модуля prime.
+Импортируйте её в свой код.
+
+>>> from teory_14 import is_prime
+Теперь можно проверять числа на простоту.
+>>> is_prime(2)
+True
+>>> is_prime(100000007)
+If the number P is prime, the check may take a long time.
+Working...
+True
