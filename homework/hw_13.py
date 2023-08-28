@@ -85,4 +85,4 @@ def solve_quad_equation(a: int, b: int, c: int):
         print(f"x = {-b / 2 * a}")
 
 
-# solve_quad_equation(4,4.4,1011)
+solve_quad_equation(4,4.4,1000)
