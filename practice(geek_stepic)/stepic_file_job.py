@@ -156,24 +156,52 @@
 #             out.write(f"{el.strip().split()[0]} {int(el.strip().split()[1])+5}\n")
 #
 
+#
+# with open('goats.txt') as inp, open("answer.txt", "w") as out:
+#     data = inp.readlines()
+#     ind = data.index("GOATS\n")
+#     l = len(data[ind+1:])
+#     print(l)
+#     print(data[ind + 1:])
+#     dct = []
+#     count = 0
+#     for col in data[1:ind]:
+#         for el in data[ind:]:
+#             if col==el:
+#                 count+=1
+#         dct.append(f'{col.strip()} {count}')
+#         count = 0
+#     dct = sorted(dct, key=lambda x: int(x.split()[2]))
+#     print(dct)
+#     for el in dct:
+#         if int(el.split()[2])/l * 100 > 7.1:
+#             out.write(f'{el.split()[0]} {el.split()[1]}\n')
+#
+#
+#
+# with open('output.txt', 'a') as out:
+#     for _ in range(int(input())):
+#         with open(input()) as inp:
+#              print(inp.read(),file=out, end="")
 
-with open('goats.txt') as inp, open("answer.txt", "w") as out:
-    data = inp.readlines()
-    ind = data.index("GOATS\n")
-    l = len(data[ind+1:])
-    print(l)
-    print(data[ind + 1:])
-    dct = []
-    count = 0
-    for col in data[1:ind]:
-        for el in data[ind:]:
-            if col==el:
-                count+=1
-        dct.append(f'{col.strip()} {count}')
-        count = 0
-    dct = sorted(dct, key=lambda x: int(x.split()[2]))
-    print(dct)
-    for el in dct:
-        if int(el.split()[2])/l * 100 > 7.1:
-            out.write(f'{el.split()[0]} {el.split()[1]}\n')
+
+
+
+with open('output.txt', 'w') as out, open("logfile.txt", "r", encoding='utf-8') as log:
+    data = log.readlines()
+    res = []
+    for el in data:
+        el = el.split(',')
+        st = int(el[1].split(':')[0])*60 + int(el[1].split(':')[1])
+        stop = int(el[2].split(':')[0])*60 + int(el[2].split(':')[1])
+        if stop - st >= 60:
+            res.append(el[0])
+    for i in range(len(res)):
+        if i == len(res)-1:
+            out.write(res[i])
+        else:
+            out.write(res[i]+"\n")
+
+
+
 
