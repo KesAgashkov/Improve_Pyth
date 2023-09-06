@@ -33,3 +33,4 @@ def script_2(com: str, path: str, text: str) -> bool:
         return False
 
 # print(script_2("ls", "/home/kes", "MoreFile"))
+

@@ -25,13 +25,13 @@ def test_value_with_text():
 def test_warning_false(capfd):
     is_prime(100_000_001)
     captured = capfd.readouterr()
-    assert captured.out == 'If the number P is prime, the check may take a long time. Working...\n'
+    assert captured.out == 'If the number P is prime, the check may take a long time.\nWorking...\n'
 
 
 def test_warning_true(capfd):
     is_prime(100_000_007)
     captured = capfd.readouterr()
-    assert captured.out == 'If the number P is prime, the check may take a long time. Working...\n'
+    assert captured.out == 'If the number P is prime, the check may take a long time.\nWorking...\n'
 
 
 if __name__ == '__main__':
