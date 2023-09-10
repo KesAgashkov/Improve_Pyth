@@ -1,0 +1,6 @@
+folder_in: /home/kes/tst
+folder_out: /home/kes/out
+folder_ext: /home/kes/folder1
+folder_ext2: /home/kes/folder2
+count: 5
+bs: 1M
