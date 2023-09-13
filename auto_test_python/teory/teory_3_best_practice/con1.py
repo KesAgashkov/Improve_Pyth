@@ -1,5 +1,16 @@
+# Задание 1.
+#
+# Условие:
+# Дополнить проект фикстурой, которая после каждого шага теста дописывает в заранее созданный файл stat.txt строку вида:
+# время, кол-во файлов из конфига, размер файла из конфига, статистика загрузки процессора из файла /proc/loadavg
+# (можно писать просто всё содержимое этого файла).
+#
+# Задание 2. (дополнительное задание)
+#
+# Дополнить все тесты ключом команды 7z -t (тип архива). Вынести этот параметр в конфиг.
+
 import pytest
-from checkers import checkout
+from checkers import checkout, getout
 import random, string
 import yaml
 from datetime import datetime
@@ -36,8 +47,8 @@ def make_subfolder():
         return subfoldername, testfilename
 
 @pytest.fixture(autouse=True)
-def print_time():
-    print("Start: {}".format(datetime.now().strftime("%H:%M:%S.%f")))
-    yield
-    print("Finish: {}".format(datetime.now().strftime("%H:%M:%S.%f")))
+def add_log_info():
+    d = f"time = {datetime.now().strftime('%H:%M:%S.%f')} count = {data['count']} size = {data['bs']} load cpu = {getout('uptime')}"
+    getout(f"echo {d} >> stat.txt")
+
 
