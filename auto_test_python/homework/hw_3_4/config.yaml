@@ -6,4 +6,8 @@ folder_bad: /home/kes/folder2
 count: 3
 bs: 10K
 exten: zip
+host: localhost
+user: kes
+passwd: "1"
+
 

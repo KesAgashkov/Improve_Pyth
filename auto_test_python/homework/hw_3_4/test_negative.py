@@ -1,6 +1,6 @@
 import pytest
 
-from checks import checkout_negativ
+from checks import ssh_checkout_negative
 import yaml
 
 # folder_in = '/home/user/tst'
@@ -15,11 +15,11 @@ with open('config.yaml') as fy:
 class TestNegative:
     def test_negative1(self, make_folder, clear_folder, make_files, create_bad_archive):  # e извлекли из архива
 
-        assert checkout_negativ(f'cd {data["folder_bad"]}; 7z e arx2.{data["exten"]} -o{data["folder_ext"]} -y', "ERROR")
+        assert ssh_checkout_negative(data["host"], data["user"], data["passwd"], f'cd {data["folder_bad"]}; 7z e arx2.{data["exten"]} -o{data["folder_ext"]} -y', "ERROR")
 
     def test_negative2(self, make_folder, clear_folder, make_files,
                        create_bad_archive):  # t проверка целостности архива
-        assert checkout_negativ(f'cd {data["folder_bad"]}; 7z t arx2.{data["exten"]}', "ERROR")
+        assert ssh_checkout_negative(data["host"], data["user"], data["passwd"], f'cd {data["folder_bad"]}; 7z t arx2.{data["exten"]}', "ERROR")
 
 
 
