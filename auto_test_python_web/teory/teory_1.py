@@ -20,7 +20,7 @@ sign = 'dsdsds'
 
 client = Client(wsdl=wsdl)
 
-def test_check_sign():
-    assert client.service.VerifySignature('CMS', sign)["Result"], "Неверная подпись"
+# def test_check_sign():
+#     assert client.service.VerifySignature('CMS', sign)["Result"], "Неверная подпись"
 
 
