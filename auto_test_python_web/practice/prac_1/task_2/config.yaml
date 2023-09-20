@@ -1,5 +1,9 @@
 url: https://test-stand.gb.ru/gateway/login
 address: https://test-stand.gb.ru/api/posts
 
+title: Тестовая статья
+description: Самая простая статья
+content: Очень длинный текст
+
 login: New
 password: 03c2e7e41f
