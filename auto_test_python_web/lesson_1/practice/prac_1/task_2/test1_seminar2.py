@@ -24,7 +24,7 @@ def test_search_new_articles(user_login):
         "Статья не найдена в списке статей"
 
 
-def test_step1(user_login, post_title):
+def test_search_old_article(user_login, post_title):
     result = S.get(url=data['address'], headers={'X-Auth-Token': user_login}, params={'owner': 'notMe'}).json()['data']
     result_title = [i['title'] for i in result]
     assert post_title in result_title, 'test_step1 FAIL'

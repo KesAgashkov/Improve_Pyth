@@ -1,0 +1,4 @@
+address: https://test-stand.gb.ru
+#driver_path: /home/kes/PycharmProjects/SeleniumPyth/chromedriver
+browser: firefox
+sleep_time: 0
