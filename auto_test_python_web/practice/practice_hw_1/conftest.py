@@ -49,7 +49,7 @@ def input_title():
     return """//*[@id="create-item"]/div/div/div[1]/div/label/input"""
 @pytest.fixture()
 def button_save():
-    return """/html/body/div/main/div/div/form/div/div/div[7]/div/button/span"""
+    return """/html/body/div/main/div/div/form/div/div/div[7]/div/button"""
 @pytest.fixture()
 def el_created_article():
     return """//*[@id="app"]/main/div/div[1]/h1"""
