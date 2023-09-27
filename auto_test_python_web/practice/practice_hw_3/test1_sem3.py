@@ -1,6 +1,7 @@
 import yaml
 from testpage import OperationsHelper
 import logging
+import time
 
 with open("./testdata.yaml") as f:
     testdata = yaml.safe_load(f)
@@ -41,3 +42,23 @@ def test_add_post(browser):
     testpage.click_save_post_button()
     testpage.find_new_post_title()
     assert testpage.find_new_post_title() == f"{testdata['title']}", "test add post FAILED"
+
+# Задание
+#
+# Условие: Добавить в проект тест по проверке механики работы формы Contact Us на главной странице личного кабинета.
+# Должно проверятся открытие формы, ввод данных в поля, клик по кнопке и появление всплывающего alert.
+#
+# Совет: переключиться на alert можно командой alert = self.driver.switch_to.alert
+# Вывести текст alert.text
+
+def test_check_contact_us_positive(browser):
+    logging.info("Test contact us started")
+    testpage = OperationsHelper(browser)
+    testpage.click_contact_button()
+    time.sleep(1)
+    testpage.add_name_block_contact(testdata["name"])
+    testpage.add_email_block_contact(testdata["email"])
+    testpage.add_content_block_contact(testdata["content_1"])
+    testpage.click_save_contact_us()
+    time.sleep(1)
+    assert testpage.get_allert_text() == testdata["message_success"], "Неудачная отправка данных в блоке 'Contact'"

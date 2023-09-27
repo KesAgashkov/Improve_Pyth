@@ -18,6 +18,12 @@ class TestSeacrhLocators:
     LOCATOR_SAVE_POST = (By.XPATH, """//*[@id="create-item"]/div/div/div[7]/div/button""")
     LOCATOR_FIND_NEW_POST = (By.XPATH, """//*[@id="app"]/main/div/div[1]/h1""")
 
+    LOCATOR_BUTTON_TRANS_CONTACT = (By.XPATH,"""/html/body/div[1]/main/nav/ul/li[2]/a""")
+    LOCATOR_YOUR_NAME_FIELD_CONTACT = (By.XPATH,"""/html/body/div/main/div/div/form/div[1]/label/input""")
+    LOCATOR_EMAIL_FIELD_CONTACT = (By.XPATH,"""/html/body/div/main/div/div/form/div[2]/label/input""")
+    LOCATOR_CONTENT_FIELD_CONTACT = (By.XPATH,"""/html/body/div/main/div/div/form/div[3]/label/span/textarea""")
+    LOCATOR_BUTTON_CONTACT_SUBMIT = (By.XPATH,"""/html/body/div/main/div/div/form/div[4]/button""")
+
 
 class OperationsHelper(BasePage):
     def enter_login(self, word):
@@ -88,5 +94,37 @@ class OperationsHelper(BasePage):
         text = new_post_field.text
         logging.info(f"We find new post title '{text}' in field {TestSeacrhLocators.LOCATOR_SUCCESS[1]}")
         return text
+
+
+    def click_contact_button(self):
+        logging.info("Transition to page 'contact us'")
+        self.find_element(TestSeacrhLocators.LOCATOR_BUTTON_TRANS_CONTACT).click()
+
+    def add_name_block_contact(self, name):
+        logging.info("Add your name in contact")
+        content_field = self.find_element(TestSeacrhLocators.LOCATOR_YOUR_NAME_FIELD_CONTACT)
+        content_field.clear()
+        content_field.send_keys(name)
+
+    def add_email_block_contact(self, mail):
+        logging.info("Add email in contact")
+        content_field = self.find_element(TestSeacrhLocators.LOCATOR_EMAIL_FIELD_CONTACT)
+        content_field.clear()
+        content_field.send_keys(mail)
+
+    def add_content_block_contact(self, content):
+        logging.info("Add content in contact")
+        content_field = self.find_element(TestSeacrhLocators.LOCATOR_CONTENT_FIELD_CONTACT)
+        content_field.clear()
+        content_field.send_keys(content)
+
+    def click_save_contact_us(self):
+        logging.info("Transition to page 'contact us'")
+        self.find_element(TestSeacrhLocators.LOCATOR_BUTTON_CONTACT_SUBMIT).click()
+
+    def get_allert_text(self):
+        return self.driver.switch_to.alert.text
+
+
 
 

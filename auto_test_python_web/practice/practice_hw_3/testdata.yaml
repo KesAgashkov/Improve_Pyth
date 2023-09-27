@@ -9,3 +9,11 @@ pswd: "d922c29b42"
 title: WebDriver
 description: Selenium WebDriver is a programming interface that can be used to create and execute test cases.
 content: Think of a WebDriver as a mediator, something that allows two things to interact. Imagine there are two people who cannot speak the same language. One of them has interesting and useful things to say, but can not get their point across. In that case, you need an interpreter.
+
+
+#data to content block
+
+name: Parfiriy
+email: parf@mail.ru
+content_1: Simple question about working project
+message_success: Form successfully submitted
