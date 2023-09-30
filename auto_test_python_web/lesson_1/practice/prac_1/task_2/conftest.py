@@ -18,5 +18,5 @@ def user_login():
 
 @pytest.fixture()
 def post_title():
-    return 'newPost'
+    return 'Самая простая статья'
 
