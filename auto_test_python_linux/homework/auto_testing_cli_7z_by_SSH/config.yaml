@@ -1,3 +1,4 @@
+# Изменить логин с "kes" на свой
 folder_in: /home/kes/tst
 folder_out: /home/kes/out
 folder_ext: /home/kes/folder1
@@ -7,7 +8,8 @@ count: 3
 bs: 10K
 exten: zip
 host: localhost
-user: kes
-passwd: "1"
+#Логин и пароль виртуальной машины Linux
+user:
+passwd:
 
 
